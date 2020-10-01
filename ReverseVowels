@@ -1,0 +1,38 @@
+#include<bits/stdc++.h> 
+using namespace std; 
+  
+// utility function to check for vowel 
+bool isVowel(char c) 
+{ 
+    return (c=='a' || c=='A' || c=='e' || 
+            c=='E' || c=='i' || c=='I' || 
+            c=='o' || c=='O' || c=='u' || 
+            c=='U'); 
+} 
+  
+// Function to reverse order of vowels 
+string reverseVowel(string str) 
+{ 
+    int j=0; 
+    // Storing the vowels separately 
+    string vowel; 
+    for (int i=0; str[i]!='\0'; i++) 
+        if (isVowel(str[i])) 
+            vowel[j++] = str[i]; 
+  
+    // Placing the vowels in the reverse 
+    // order in the string 
+    for (int i=0; str[i]!='\0'; i++) 
+        if (isVowel(str[i])) 
+            str[i] = vowel[--j] ; 
+  
+    return str; 
+} 
+  
+// Driver function 
+int main() 
+{ 
+    string str = "hello world"; 
+    cout << reverseVowel(str); 
+    return 0; 
+} 
